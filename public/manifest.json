@@ -1,6 +1,6 @@
 {
-  "name": "Supervisión de Locales",
-  "short_name": "Supervisión",
+  "name": "Checklist Supervisor Mantenimiento",
+  "short_name": "Checklist",
   "description": "Checklist de supervisión de mantenimiento para locales y sucursales",
   "start_url": "/",
   "scope": "/",

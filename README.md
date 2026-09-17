@@ -1,4 +1,4 @@
-# Supervisión de Locales
+# Checklist Supervisor Mantenimiento
 
 App para supervisores de mantenimiento: checklist de inspección por sucursal
 (generador, luces, fríos, pisos, áreas de personal, baños, comedores,

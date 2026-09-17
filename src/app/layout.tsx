@@ -14,13 +14,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Supervisión de Locales",
+  title: "Checklist Supervisor Mantenimiento",
   description: "Checklist de supervisión de mantenimiento para locales y sucursales",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "Supervisión",
+    title: "Checklist Mantenimiento",
   },
   icons: {
     icon: [

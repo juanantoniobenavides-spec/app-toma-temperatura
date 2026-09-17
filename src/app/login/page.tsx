@@ -34,7 +34,7 @@ export default function LoginPage() {
     <div className="flex min-h-screen flex-1 items-center justify-center bg-slate-50 px-4 dark:bg-slate-950">
       <div className="w-full max-w-sm rounded-2xl border border-slate-200 bg-white p-8 shadow-sm dark:border-slate-800 dark:bg-slate-900">
         <h1 className="text-xl font-semibold text-slate-900 dark:text-slate-50">
-          Supervisión de Locales
+          Checklist Supervisor Mantenimiento
         </h1>
         <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
           Ingresa con tu cuenta para continuar.
