@@ -50,37 +50,43 @@ Ya está implementado:
 
 **Lo que falta / lo que hay que hacer a continuación**, en orden lógico:
 
-1. **Git**: esta carpeta viene de un `.zip` (sin historial de `git`). Antes de
-   seguir editando, correr `git init`, `git add -A`, `git commit` para tener
-   historial local. Si el acceso de GitHub ya se resolvió (ver punto 2),
-   mejor clonar el repo real en vez de reusar esta carpeta suelta.
-2. **Acceso a GitHub**: el push desde la sesión anterior falló porque la
-   Claude GitHub App no está instalada en
-   `juanantoniobenavides-spec/app-toma-temperatura`. Hay que instalarla
-   (https://github.com/apps/claude/installations/select_target) o
-   reconectar GitHub desde claude.ai antes de poder pushear. La rama de
-   trabajo se llamaba `claude/maintenance-supervisor-app-u7swi2`.
-3. **Crear el proyecto real en Supabase** (no existe todavía, solo el SQL):
+1. **Git**: el acceso a GitHub ya quedó resuelto (la Claude GitHub App se
+   instaló) y el trabajo está pusheado en
+   `juanantoniobenavides-spec/app-toma-temperatura`, rama
+   `claude/maintenance-supervisor-app-u7swi2`. **Lo mejor es clonar ese repo
+   directo en esta carpeta** en vez de seguir desde el `.zip` (el zip no
+   tiene historial de `git`):
+   ```bash
+   git clone -b claude/maintenance-supervisor-app-u7swi2 \
+     https://github.com/juanantoniobenavides-spec/app-toma-temperatura.git .
+   ```
+   (correr dentro de la carpeta `App supervisor`, vacía o reemplazando el
+   contenido del zip).
+2. **Crear el proyecto real en Supabase** (no existe todavía, solo el SQL):
    crear proyecto en supabase.com, correr `supabase/schema.sql` completo en
    el SQL Editor, y copiar `Project URL` + `anon key`.
-4. **Configurar `.env.local`** (no viene en el zip por seguridad): copiar
-   `.env.example` y completar con las credenciales del punto 3.
-5. **Levantar en local**: `npm install` y `npm run dev`, abrir
+3. **Configurar `.env.local`** (no viene en el repo por seguridad): copiar
+   `.env.example` y completar con las credenciales del punto 2.
+4. **Levantar en local**: `npm install` y `npm run dev`, abrir
    `http://localhost:3000` — **esto es lo primero que la sesión anterior no
    pudo hacer** (no tenía navegador). Probar el flujo completo con ojos
    humanos: login, checklist como supervisor, panel como admin.
-6. **Crear el primer usuario admin**: invitar un usuario desde
+5. **Crear el primer usuario admin**: invitar un usuario desde
    Supabase (Authentication → Users → Invite user), y en
    Table Editor → `profiles` cambiar su `role` a `admin` manualmente (los
    siguientes admins ya se gestionan desde `/admin/usuarios`).
-7. **Crear al menos una sucursal** desde `/admin/sucursales` y asignarle un
+6. **Crear al menos una sucursal** desde `/admin/sucursales` y asignarle un
    supervisor para poder probar el flujo de punta a punta.
-8. **Probar la instalación PWA en un Android real**: abrir el sitio
+7. **Probar la instalación PWA en un Android real**: abrir el sitio
    desplegado desde Chrome en el celular y confirmar que aparece
    "Instalar app" / "Agregar a pantalla de inicio", y que las fotos se
    suben bien usando la cámara del teléfono.
-9. **Desplegar a producción** (por ejemplo Vercel) — hoy el proyecto solo
-   corre en `npm run dev`, no hay nada desplegado.
+8. **Desplegar a producción** (por ejemplo Vercel) — hoy el proyecto solo
+   corre en `npm run dev`, no hay nada desplegado. Al conectar el repo a
+   Vercel, configurar ahí las mismas variables de entorno del punto 3.
+9. **Considerar mergear `claude/maintenance-supervisor-app-u7swi2` a la rama
+   principal** (`main`) cuando el proyecto esté probado, para que quede como
+   la base del repo.
 
 ### Pendientes conocidos, de menor prioridad
 
